@@ -73,5 +73,6 @@ type FunctionConfig struct {
 	// encapsulates how the secret is fetched by the underlying
 	// secrets provider. The type of an value here can be found by the
 	// SecretProviderConfigurator.getSecretObjectType() method.
-	Secrets map[string]interface{} `json:"secrets,omitempty" yaml:"secrets"`
+	Secrets              map[string]interface{} `json:"secrets,omitempty" yaml:"secrets"`
+	SubscriptionPosition string                 `json:"subscriptionPosition,omitempty" yaml:"subscriptionPosition"`
 }
