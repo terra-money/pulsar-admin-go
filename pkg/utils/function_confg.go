@@ -25,11 +25,11 @@ type FunctionConfig struct {
 	TimeoutMs     *int64  `json:"timeoutMs,omitempty" yaml:"timeoutMs"`
 	TopicsPattern *string `json:"topicsPattern,omitempty" yaml:"topicsPattern"`
 	// Whether the subscriptions the functions created/used should be deleted when the functions is deleted
-	CleanupSubscription bool `json:"cleanupSubscription,omitempty" yaml:"cleanupSubscription"`
-	RetainOrdering      bool `json:"retainOrdering,omitempty" yaml:"retainOrdering"`
-	AutoAck             bool `json:"autoAck,omitempty" yaml:"autoAck"`
-	Parallelism         int  `json:"parallelism,omitempty" yaml:"parallelism"`
-	MaxMessageRetries   *int `json:"maxMessageRetries,omitempty" yaml:"maxMessageRetries"`
+	CleanupSubscription *bool `json:"cleanupSubscription,omitempty" yaml:"cleanupSubscription"`
+	RetainOrdering      *bool `json:"retainOrdering,omitempty" yaml:"retainOrdering"`
+	AutoAck             *bool `json:"autoAck,omitempty" yaml:"autoAck"`
+	Parallelism         int   `json:"parallelism,omitempty" yaml:"parallelism"`
+	MaxMessageRetries   *int  `json:"maxMessageRetries,omitempty" yaml:"maxMessageRetries"`
 
 	Output string `json:"output,omitempty" yaml:"output"`
 
