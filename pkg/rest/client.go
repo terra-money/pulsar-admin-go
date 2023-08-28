@@ -19,7 +19,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"io"
-	"log"
 	"net/http"
 	"net/url"
 	"path"
@@ -269,14 +268,6 @@ func (c *Client) PostWithMultiPart(endpoint string, in interface{}, body io.Read
 	req.obj = in
 	req.body = body
 	req.contentType = contentType
-
-	if req.body != nil {
-		bodyBytes, _ := io.ReadAll(req.body)
-		log.Println("Body:", string(bodyBytes))
-
-		// Restore the io.ReadCloser to its original state
-		req.body = io.NopCloser(bytes.NewBuffer(bodyBytes))
-	}
 
 	//nolint
 	resp, err := checkSuccessful(c.doRequest(req))
