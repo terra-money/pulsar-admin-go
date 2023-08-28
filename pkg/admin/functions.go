@@ -26,6 +26,7 @@ import (
 	"path/filepath"
 	"strings"
 
+	"github.com/davecgh/go-spew/spew"
 	"github.com/streamnative/pulsar-admin-go/pkg/utils"
 )
 
@@ -170,7 +171,7 @@ func (f *functions) CreateFunc(funcConf *utils.FunctionConfig, fileName string) 
 	if err != nil {
 		return err
 	}
-
+	spew.Dump(jsonData)
 	stringWriter, err := f.createStringFromField(multiPartWriter, "functionConfig")
 	if err != nil {
 		return err
